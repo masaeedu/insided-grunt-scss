@@ -1,8 +1,8 @@
 /* top bar styles */
 .top-bar {  
-  background: #111;
+  background: $topbar-black;
   clear: both;
-  color: #fff;
+  color: $white;
   overflow: hidden;
   padding: 0 0.5em;
   width: 100%;
@@ -23,7 +23,7 @@
     }
 
     .top-bar__user-btn {
-      background: #1dadf5;
+      background: $topbar-blue;
       margin-left: 1em;
       padding: 0.357em;
     }

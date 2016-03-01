@@ -194,9 +194,9 @@ input[type=button] {
 
 /* top bar styles */
 .top-bar {
-  background: #111;
+  background: #111111;
   clear: both;
-  color: #fff;
+  color: #ffffff;
   overflow: hidden;
   padding: 0 0.5em;
   width: 100%; }
@@ -225,16 +225,6 @@ nav.top-bar__user-nav,
   float: right; }
 
 /* end topbar styles */
-body {
-  font-family: Helvetica, arial, sans-serif;
-  font-size: 14px; }
-
-.wrapper {
-  clear: both;
-  height: auto;
-  overflow: hidden;
-  position: relative; }
-
 /* start sidebar styles */
 .left-wrapper {
   float: left;
@@ -246,42 +236,44 @@ body {
   height: 100%;
   position: absolute;
   width: 17%; }
-
-.sidebar ul {
-  list-style: none; }
-
-.sidebar ul li a {
-  border-bottom: 1px solid #c5c5c5;
-  color: #333;
-  display: block;
-  font-size: 1.1em;
-  font-weight: 300;
-  padding: 0.6em;
-  position: relative;
-  text-decoration: none; }
-
-.sidebar li a:hover {
-  color: #2caff3; }
-
-.sidebar ul li i {
-  margin-right: 0.5em; }
-
-.sidebar .sidebar__inner-ul {
-  border-bottom: 1px solid #c5c5c5; }
-
-.sidebar .sidebar__inner-ul li a {
-  border: none;
-  font-size: 0.8em;
-  padding-left: 1.5em; }
-
-.sidebar .sidebar__inner-ul li a.active {
-  font-weight: bold; }
-
-.sidebar .disabled {
-  border-bottom: none;
-  color: #ddd; }
+  .sidebar ul {
+    list-style: none; }
+    .sidebar ul a {
+      border-bottom: 1px solid #c5c5c5;
+      color: #333;
+      display: block;
+      font-size: 1.1em;
+      font-weight: 300;
+      padding: 0.6em;
+      position: relative;
+      text-decoration: none; }
+      .sidebar ul a:hover {
+        color: #2caff3; }
+    .sidebar ul i {
+      margin-right: 0.5em; }
+  .sidebar .sidebar__inner-ul {
+    border-bottom: 1px solid #c5c5c5; }
+    .sidebar .sidebar__inner-ul a {
+      border: none;
+      font-size: 0.8em;
+      padding-left: 1.5em; }
+    .sidebar .sidebar__inner-ul a.active {
+      font-weight: bold; }
+  .sidebar .disabled {
+    border-bottom: none;
+    color: #dddddd; }
 
 /* end sidebar styles */
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px; }
+
+.wrapper {
+  clear: both;
+  height: auto;
+  overflow: hidden;
+  position: relative; }
+
 /* start main content styles */
 .content {
   background: #fff;
