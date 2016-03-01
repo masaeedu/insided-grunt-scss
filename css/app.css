@@ -383,6 +383,15 @@ nav.top-bar__user-nav,
   border-bottom: 1px solid #c5c5c5;
   padding: 1em; }
 
+.advanced-search__pagination {
+  float: right; }
+
+.advanced-search__pagination .dropdown {
+  font-size: 0.9em;
+  margin: 0 0 0.5em 0.5em;
+  padding: 0.75em 0.5em;
+  width: 7em; }
+
 /* start tag styles */
 .advanced-search__middle {
   clear: both;
@@ -516,6 +525,36 @@ a.search-results__user-icon {
   width: 13.5%; }
 
 /* end tabular data styles */
+.search-results__footer {
+  border-left: 1px solid #c5c5c5;
+  border-right: 1px solid #c5c5c5;
+  display: none;
+  width: 100%; }
+  .search-results__footer .dropdown {
+    padding: 0.75em 0.9em;
+    width: 12em; }
+  .search-results__footer .progess-bar {
+    background: #ffffff;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+    line-height: 2em;
+    margin: 0.9em 0.5em 0.5em 0.5em;
+    padding: 0.3em;
+    text-align: center;
+    width: 9em; }
+
+.search-results__dd,
+.search-results__export {
+  padding: 0.9em 0.5em; }
+
+.search-results__dd,
+.progess-bar {
+  float: left; }
+
+.search-results__progess,
+.search-results__export {
+  float: right; }
+
 body {
   font-family: Helvetica, arial, sans-serif;
   font-size: 14px; }
@@ -531,47 +570,6 @@ body {
   background: #fff;
   float: right;
   width: 82%; }
-
-.advanced-search__pagination {
-  float: right; }
-
-.advanced-search__pagination .dropdown {
-  font-size: 0.9em;
-  margin: 0 0 0.5em 0.5em;
-  padding: 0.75em 0.5em;
-  width: 7em; }
-
-.search-results__footer {
-  border-left: 1px solid #c5c5c5;
-  border-right: 1px solid #c5c5c5;
-  display: none;
-  width: 100%; }
-
-.search-results__dd,
-.search-results__export {
-  padding: 0.9em 0.5em; }
-
-.search-results__dd,
-.progess-bar {
-  float: left; }
-
-.search-results__footer .dropdown {
-  padding: 0.75em 0.9em;
-  width: 12em; }
-
-.search-results__progess,
-.search-results__export {
-  float: right; }
-
-.progess-bar {
-  background: #ffffff;
-  border: 1px solid #c5c5c5;
-  border-radius: 3px;
-  line-height: 2em;
-  margin: 0.9em 0.5em 0.5em 0.5em;
-  padding: 0.3em;
-  text-align: center;
-  width: 9em; }
 
 footer {
   margin: 0 3% 1% 1%;
