@@ -1,0 +1,44 @@
+/* top bar styles */
+.top-bar {  
+  background: #111;
+  clear: both;
+  color: #fff;
+  overflow: hidden;
+  padding: 0 0.5em;
+  width: 100%;
+
+  .top-bar__logo {
+    float: left;
+
+    p {
+      margin-top: 1.429em;
+    }
+  }
+
+  .top-bar__user-nav {
+    margin-top: 1.071em;
+    margin-right: 3%;
+    .top-bar__user-name {
+      margin-top: 0.357em;
+    }
+
+    .top-bar__user-btn {
+      background: #1dadf5;
+      margin-left: 1em;
+      padding: 0.357em;
+    }
+  }
+}
+
+.top-bar__logo img, .top-bar__logo p,
+.top-bar__user-name {
+  /* make this into a mixin */
+  display: block;
+  float: left;
+}
+
+nav.top-bar__user-nav,
+.top-bar__user-btn {
+  float: right;
+}
+/* end topbar styles */
