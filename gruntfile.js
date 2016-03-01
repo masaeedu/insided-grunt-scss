@@ -18,6 +18,14 @@ module.exports = function (grunt) {
       }]
       }
     },
+    sass_import: {
+      options: {},
+      dist: {
+        files: {
+          'app.scss': ['base/*', 'mixins/*', 'modules/*']
+        }
+      }
+    },
     postcss: { // Begin Post CSS Plugin
       options: {
         map: false,
@@ -65,6 +73,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-sass-import');
 
   // Register Grunt tasks
   grunt.registerTask('default', ['watch']);
