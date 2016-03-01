@@ -1,0 +1,77 @@
+/* start drop down styles */
+.dropdown {
+  background: $dropdown-bg-white;
+  border: 1px solid $gray-border;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9em;
+  outline: none;
+  padding: 0.5em 0.9em;
+  position: relative;
+  width: 15.5em; 
+
+  // make caret 
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 1.143em;
+    top: 50%;
+    margin-top: -0.214em;
+    border-width: 0.429em 0.429em 0 0.429em;
+    border-style: solid;
+    border-color: $gray-border;
+  }
+
+  .dropdown__menu {
+    background: $white;
+    border-bottom: 1px solid $gray-border;
+    border-left: 1px solid $gray-border;
+    border-right: 1px solid $gray-border;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; //check cross browser
+    left: -1px;
+    list-style: none;
+    opacity: 0; // hiding 
+    pointer-events: none;
+    position: absolute;
+    right: -1px;
+    transition: all 0.3s ease-out; //check cross browser
+    top: 100%;   
+
+    a {
+      display: block;
+      color: $font-dark-gray;
+      padding: 0.357em 0.9em;
+      text-decoration: none;
+      transition: all 0.3s ease-out; //check cross browser
+    } 
+
+    li:hover a {
+      background: $hover-blue;
+    }
+  }
+} 
+
+.dropdown.disabled span {
+  color: $dropdown-disable-gray;
+}
+
+/* expanded */
+.dropdown.active {
+  background: $white;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; //check cross browser
+  z-index: 999;
+  &:after {
+    border-width: 0 0.429em  0.429em  0.429em ;
+  }
+  .dropdown__menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+/* end drop down styles */
