@@ -138,20 +138,20 @@ a.disabled {
   /* make checkbox groups easier to see */
   .advanced-search__checkboxes {
     text-align: center;
-  }
 
-  .advanced-search__checkboxes h4 {
-    text-align: left;
-  }
+    h4 {
+      text-align: left;
+    }
 
-  .group-checkboxes {
-    display: inline-block;
-    float: none;
-    font-size: 1em;
-    padding-top: 1em;
-    text-align: left;
-    width: 24%;
-    vertical-align: top;
+    .group-checkboxes {
+      display: inline-block;
+      float: none;
+      font-size: 1em;
+      padding-top: 1em;
+      text-align: left;
+      width: 24%;
+      vertical-align: top;
+    }
   }
 
   /* remove floats & center pagination & tags  */
@@ -165,7 +165,7 @@ a.disabled {
   }
 
   .advanced-search__categories {
-    border-bottom: 1px dotted #c5c5c5;
+    border-bottom: 1px dotted $gray-border;
     margin-bottom: 0.8em;
     padding-bottom: 0.8em;
   }
@@ -203,10 +203,9 @@ a.disabled {
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
-  }
-
-  .search-results__dd .dropdown {
-    text-align: left;
+    .dropdown {
+      text-align: left;
+    }
   }
 
   .progess-bar,
@@ -225,7 +224,7 @@ a.disabled {
   }
 
   .sidebar {
-    border-bottom: 1px solid #c5c5c5;
+    border-bottom: 1px solid $gray-border;
     position: relative;
     text-align: center;
     width: 100%;
@@ -234,14 +233,12 @@ a.disabled {
   .sidebar li {
     display: inline-block;
     text-align: left;
-  }
-
-  .sidebar ul li a {
-    border-bottom: none;
-  }
-
-  .sidebar li ul {
-    display: none;
+    a {
+      border-bottom: none;
+    }
+    ul {
+      display: none;
+    }
   }
 
   /* change main content to full width */
@@ -256,20 +253,26 @@ a.disabled {
     display: none;
   }
   
-  /* make group checkboxes more readable */
-  .group-checkboxes {
-    width: 32%;
+  .advanced-search {
+    /* make group checkboxes more readable */
+    .group-checkboxes {
+      width: 32%;
+    }
+
+    h4,
+    .advanced-search__checkboxes h4 {
+      text-align: center;
+    }
   }
 
   /* make advanced drop downs more readable */
-  .advanced-search__checkboxes h4,
-  .advanced-search h4 {
-    text-align: center;
-  }
-
   .advanced-search__select-row {
-    border-bottom: 1px dotted #c5c5c5;
+    border-bottom: 1px dotted $gray-border;
     padding: 1em 0;
+    .dropdown {
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
+    }
   }
 
   .btn.remove {
@@ -278,17 +281,9 @@ a.disabled {
   }
 
   .select-row-wrap {
-    display: inline-block;
     width: 90%;
     vertical-align: middle;
-  }
-
-  .advanced-search__select-row .dropdown {
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-  }
-
-  
+  }  
 }
 
 @media screen and (max-width: 595px) {
@@ -307,36 +302,85 @@ a.disabled {
   .search-results-thead {
     display: none;
   }
-  
-  .search-results__row .search-results__last-comment {
-    border-right: 1px solid #c5c5c5;
+
+  .search-results__row {
+    .search-results__last-comment {
+      border-right: 1px solid $gray-border;
+    }
+
+    .search-results-td {
+      text-align: left;
+      width: 100%;
+      &:before {
+        content:' 'attr(data-label)': ';
+        display: inline;
+        font-size:0.95em;
+        font-weight:bold;
+        padding-right:1em;
+      }
+    }
   }
 
   .search-results-tr {
-    border-left: 1px solid #c5c5c5;
-    border-top: 1px solid #c5c5c5;
+    border-left: 1px solid $gray-border;
+    border-top: 1px solid $gray-border;
     margin: 1em 0;
-  }
-
-  .search-results__row .search-results-td {
-    text-align: left;
-    width: 100%;
-  }
-
-  .search-results-td:before {
-    content:' 'attr(data-label)': ';
-    font-size:0.95em;
-    font-weight:bold;
-    padding-right:1em;
-  }
+  } 
 
   .search-results__footer {
-    border: 1px solid #c5c5c5;
+    border: 1px solid $gray-border;
+  }
+
+  // change top menu to left
+  .sidebar {
+    text-align: left;
   }
 }
 
-@media screen and (max-width: 480px) {
-  
+@media screen and (max-width: 510px) {
+  // move top nav user section below 
+  // logo to make it mobile friendly
+  .top-bar {
+    .top-bar__logo {
+      clear: both;
+      display: block;
+      float: none;
+      overflow: hidden;
+    }
+    .top-bar__user-nav {
+      clear: both;
+      display: block;
+      float: none;
+      margin: 0 0 0.5em 0;
+      overflow: hidden;
+      .top-bar__user-btn {
+        float: left;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  // change results footer to be
+  // more mobile friendly
+  .search-results__footer {
+    .search-results__dd {
+      clear: none;
+      float: left;
+      margin: 0 auto;
+      width: 49%;
+    }
+
+    .search-results__progess {
+      clear: none;
+      float: right;
+      width: 49%;
+    }
+
+    .dropdown, button {
+      display: block;
+      margin: 0 auto 0.5em auto;
+    }
+  }
 }
 
 
