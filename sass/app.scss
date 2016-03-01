@@ -258,6 +258,11 @@ a.disabled {
     .group-checkboxes {
       width: 32%;
     }
+    
+    // make dropdown wrap smaller
+    .select-row-wrap {
+      width: 75%;
+    }
 
     h4,
     .advanced-search__checkboxes h4 {
@@ -379,6 +384,34 @@ a.disabled {
     .dropdown, button {
       display: block;
       margin: 0 auto 0.5em auto;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  // remove topbar tagline 
+  .top-bar__logo {
+    p {
+      display: none;
+    }
+  }
+
+  // make group checkboxes mobile friendly
+  .advanced-search {
+    .group-checkboxes {
+      width: 49%;
+    }
+  }
+
+  //make tag buttons have less padding
+  .advanced-search__categories {
+    li {
+      margin-right: 0.5em;
+    }
+
+    button {
+      padding: 0.5em;
+      margin-right: 0.5em;
     }
   }
 }

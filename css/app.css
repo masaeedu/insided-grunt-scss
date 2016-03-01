@@ -752,6 +752,8 @@ a.disabled {
     /* make group checkboxes more readable */ }
     .advanced-search .group-checkboxes {
       width: 32%; }
+    .advanced-search .select-row-wrap {
+      width: 75%; }
     .advanced-search h4,
     .advanced-search .advanced-search__checkboxes h4 {
       text-align: center; }
@@ -835,3 +837,15 @@ a.disabled {
   .search-results__footer .dropdown, .search-results__footer button {
     display: block;
     margin: 0 auto 0.5em auto; } }
+@media screen and (max-width: 360px) {
+  .top-bar__logo p {
+    display: none; }
+
+  .advanced-search .group-checkboxes {
+    width: 49%; }
+
+  .advanced-search__categories li {
+    margin-right: 0.5em; }
+  .advanced-search__categories button {
+    padding: 0.5em;
+    margin-right: 0.5em; } }
