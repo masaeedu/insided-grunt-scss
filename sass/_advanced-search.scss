@@ -1,0 +1,87 @@
+/* start advanced search */
+.advanced-search {
+  background: $pale-gray-bg;
+  border: 1px solid $gray-border;
+  margin: 2% 3% 1% 1%;
+
+  h4 {
+    font-weight: bold;
+  }
+
+  .advanced-search__select-row {
+    padding: 0.5em 0;
+    .dropdown {
+      margin-right: 0.4em;
+    }
+  }
+
+  .advanced-search__bottom {
+    padding: 1em;
+  }
+}
+
+// search checkboxes area styles
+.advanced-search__checkboxes {
+  font-size: 0.95em;
+  overflow: hidden;
+
+  .group-checkboxes {
+    float: left;
+    width: 16.5%;
+    
+    input[type="checkbox"],
+    label {
+      display: inline-block;
+      vertical-align: middle; // probably make mixin
+    }
+  }
+
+  .group__checkbox {
+    padding: 0.25em;
+  }
+
+  .advanced-search__checkbox {
+    padding: 0.3em 0 0.3em 0.3em;
+  }
+}
+
+// dropdown checkbox styles
+.dropdown--user-options.dropdown li {
+  a {
+    color: $hover-blue;
+  }
+
+  &:hover a {
+    background: none;
+  }
+
+  .group__checkbox:hover {
+    background: $hover-blue;
+  }
+
+  .dd-checkboxes {
+    max-height: 18em;
+    overflow: scroll;
+  }
+
+  .dd-check-links {
+    overflow: hidden;
+    a {
+      float: left;
+    }
+  }
+
+  .dd-checkboxes__group {
+    padding: 0.25em;
+    p {
+      font-weight: bold;
+      padding-left: 0.25em;
+    }
+  }
+}
+
+.advanced-search__select-area, 
+.advanced-search__checkboxes {
+  border-bottom: 1px solid $gray-border;
+  padding: 1em;
+} 
