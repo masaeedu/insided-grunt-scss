@@ -7,6 +7,7 @@
 @import 'category-tags';
 @import 'pagination';
 @import 'tabular-data';
+@import 'results-footer';
 
 // General layout
 body {
@@ -39,53 +40,12 @@ body {
   width: 7em;
 }
 
-.search-results__footer {
-  border-left: 1px solid $gray-border;
-  border-right: 1px solid $gray-border;
-  display: none;
-  width: 100%;
-}
-
-.search-results__dd,
-.search-results__export {
-  padding: 0.9em 0.5em;
-}
-
-.search-results__dd,
-.progess-bar {
-  float: left;
-}
-
-.search-results__footer .dropdown {
-  padding: 0.75em 0.9em;
-  width: 12em;
-}
-
-.search-results__progess,
-.search-results__export {
-  float: right;
-}
-
-.progess-bar {
-  background: $white;
-  border: 1px solid $gray-border;
-  border-radius: 3px;
-  line-height: 2em;
-  margin: 0.9em 0.5em 0.5em 0.5em;
-  padding: 0.3em;
-  text-align: center;
-  width: 9em;
-}
-
 footer {
   margin: 0 3% 1% 1%;
   overflow: hidden;
 }
 
 /* end main content styles */
-
-
-
 
 /* reusable classes */
 .text-bold {
