@@ -1,0 +1,44 @@
+/* start tag styles */
+.advanced-search__middle {
+  clear: both;
+  margin: 2% 3% 1% 1%;
+}
+
+.advanced-search__categories {
+  float: left;
+  ul, li, a {
+    float: left;
+  }
+
+  li{
+    margin-right: 1em;
+    &:after {
+      content: "\f067"; 
+      font-family: FontAwesome;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:last-child:after {
+      content: none;
+    }
+  }
+
+  button {
+    cursor: default;
+    font-size: 0.95em;
+    font-weight: 400;
+    margin-right: 1em;
+  }
+
+  i {
+    cursor: pointer;
+    margin-right: 0.7em;
+  }
+
+  .red-link {
+    margin-left: 0;
+    padding: 0.7em 0;
+  }
+}
+/* end tag styles */
