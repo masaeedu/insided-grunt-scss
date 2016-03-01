@@ -5,6 +5,7 @@
 @import 'dropdown';
 @import 'advanced-search';
 @import 'category-tags';
+@import 'pagination';
 
 // General layout
 body {
@@ -26,40 +27,8 @@ body {
   width: 82%;
 }
 
-
-/* start pagination styles */
 .advanced-search__pagination {
   float: right;
-}
-
-.pagination {
-  float: left;
-  font-size: 0.85em;
-  list-style: none;
-}
-
-.pagination li {
-  border-right: 1px solid #333;
-  float: left;
-  height: 1.5em;
-  margin: 1em 0.5em;
-  padding-right: 1em;
-}
-
-.pagination li:last-child {
-  border-right: 0;
-  padding-right: 0;
-}
-
-.pagination input {
-  margin-top: -0.25em;
-  padding: 0.2em 0.5em;
-  width: 2em;
-} 
-
-.pagination a {
-  color: #2caff3;
-  text-decoration: none;
 }
 
 .advanced-search__pagination .dropdown {
@@ -68,8 +37,6 @@ body {
   padding: 0.75em 0.5em;
   width: 7em;
 }
-/* end pagination styles */
-
 
 /* start tabular data styles */
 .advanced-search__results {

@@ -1,0 +1,31 @@
+/* start pagination styles */
+.pagination {
+  float: left;
+  font-size: 0.85em;
+  list-style: none;
+
+  li {
+    border-right: 1px solid $font-dark-gray;
+    float: left;
+    height: 1.5em;
+    margin: 1em 0.5em;
+    padding-right: 1em;
+    &:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  input {
+    margin-top: -0.25em;
+    padding: 0.2em 0.5em;
+    width: 2em;
+  }
+
+  a {
+    color: $hover-blue;
+    text-decoration: none;
+  }
+}
+
+/* end pagination styles */
