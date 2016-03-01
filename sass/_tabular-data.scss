@@ -1,0 +1,111 @@
+/* start tabular data styles */
+.advanced-search__results {
+  font-size: 0.9em;
+  margin: 2% 3% 1% 1%;
+}
+
+.search-results {
+  border: 1px solid $gray-border;
+  border-bottom: none;
+  display: table;
+  width: 100%;
+
+  .search-results-th {
+    border-bottom: 1px solid $gray-border;
+    font-weight: bold;
+    padding: 0.9em 0.5em;
+    text-align: center;
+
+    .search-results__checkbox {
+      background: none;
+    }
+  }
+}
+
+.search-results__row {
+  .search-results-td {
+    border-bottom: 1px solid $gray-border;
+    border-right: 1px solid $gray-border;
+    padding: 1em 0.5em;
+    text-align: center;
+  }
+
+  .search-results__last-comment {
+    border-right: none;
+  }
+
+  &.checked-row {
+    background: $light-blue-bg;
+  }
+
+  &:nth-child(odd) {
+    background: $dropdown-bg-white;
+  }
+
+  .search-results__username {
+    text-align: left;
+    width: 29.5%;
+  }
+
+  .search-results__checkbox {
+    text-align: left;
+    a {
+      color: $font-dark-gray;
+      text-decoration: none;
+    }
+  }
+
+  .search-results__checkbox label {
+    font-weight: bold;
+  }
+}
+
+// need to think about where to place these further 
+// might intefere with mobile styles
+.search-results-thead {
+  display: table-header-group;
+}
+
+.search-results-tbody {
+  display: table-row-group;
+}
+
+.search-results-tr {
+  display: table-row;
+}
+
+.search-results-th, 
+.search-results-td {
+  display: table-cell;
+}
+
+.search-results-thead,
+.search-results__footer {
+  background: $table-bg-gray;
+  border-bottom: 1px solid $gray-border;
+}
+
+.search-results__int-col,
+.search-results__topics,
+.search-results__comments {
+  width: 8%;
+}
+
+.search-results__checkbox input[type="checkbox"],
+.search-results__checkbox label,
+.search-results__username a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a.search-results__user-icon {
+  display: block;
+  float: right;
+  margin: 0.5em;
+}
+
+.search-results__date,
+.search-results__usergroup {
+  width: 13.5%;
+}
+/* end tabular data styles */

@@ -6,6 +6,7 @@
 @import 'advanced-search';
 @import 'category-tags';
 @import 'pagination';
+@import 'tabular-data';
 
 // General layout
 body {
@@ -38,117 +39,9 @@ body {
   width: 7em;
 }
 
-/* start tabular data styles */
-.advanced-search__results {
-  font-size: 0.9em;
-  margin: 2% 3% 1% 1%;
-}
-
-.search-results {
-  border: 1px solid #c5c5c5;
-  border-bottom: none;
-  display: table;
-  width: 100%;
-}
-
-.search-results-thead {
-  display: table-header-group;
-}
-
-.search-results-tbody {
-  display: table-row-group;
-}
-
-.search-results-tr {
-  display: table-row;
-}
-
-.search-results-th, 
-.search-results-td {
-  display: table-cell;
-}
-
-
-.search-results-thead,
 .search-results__footer {
-  background: #f4f4f4;
-  border-bottom: 1px solid #c5c5c5;
-}
-
-.search-results .search-results-th {
-  border-bottom: 1px solid #c5c5c5;
-  font-weight: bold;
-  padding: 0.9em 0.5em;
-  text-align: center;
-}
-.search-results-th .search-results__checkbox {
-  background: none;
-}
-
-.search-results__row .search-results-td {
-  border-bottom: 1px solid #c5c5c5;
-  border-right: 1px solid #c5c5c5;
-  padding: 1em 0.5em;
-  text-align: center;
-}
-
-.search-results__int-col,
-.search-results__topics,
-.search-results__comments {
-  width: 8%;
-}
-
-.search-results__row .search-results__last-comment {
-  border-right: none;
-}
-
-.search-results-tbody .search-results__row.checked-row {
-  background: #ebf8fe;
-}
-
-.search-results__row:nth-child(odd) {
-  background: #fafafa;
-}
-
-.search-results__username {
-  text-align: left;
-  width: 29.5%;
-}
-
-.search-results__checkbox {
-  text-align: left;
-}
-
-.search-results__checkbox input[type="checkbox"],
-.search-results__checkbox label,
-.search-results__username a {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.search-results__checkbox label {
-  font-weight: bold;
-}
-
-.search-results__username a {
-  color: #000;
-  text-decoration: none;
-}
-
-a.search-results__user-icon {
-  display: block;
-  float: right;
-  margin: 0.5em;
-}
-
-.search-results__date,
-.search-results__usergroup {
-  width: 13.5%;
-}
-
-.search-results__footer {
-  border-left: 1px solid #c5c5c5;
-  border-right: 1px solid #c5c5c5;
+  border-left: 1px solid $gray-border;
+  border-right: 1px solid $gray-border;
   display: none;
   width: 100%;
 }
@@ -174,8 +67,8 @@ a.search-results__user-icon {
 }
 
 .progess-bar {
-  background: #fff;
-  border: 1px solid #c5c5c5;
+  background: $white;
+  border: 1px solid $gray-border;
   border-radius: 3px;
   line-height: 2em;
   margin: 0.9em 0.5em 0.5em 0.5em;
@@ -183,7 +76,6 @@ a.search-results__user-icon {
   text-align: center;
   width: 9em;
 }
-/* end tabular data styles */
 
 footer {
   margin: 0 3% 1% 1%;
