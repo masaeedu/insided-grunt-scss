@@ -15,11 +15,9 @@
   <meta name="google-site-verification" content="" />
   <meta name="Copyright" content="Insided" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" />
 
   <!-- concatenate and minify for production -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/datepicker.min.css" />
   <link rel="stylesheet" href="css/app.min.css" />
 </head>
@@ -99,8 +97,9 @@
                 </ul>
               </div>
               <div class="dropdown dropdown--date-options gradient-gray-bg">
-                <span>before</span> 
+                <span>Choose when</span> 
                 <ul class="dropdown__menu">
+                  <li><a href="#" class="after">before</a></li>
                   <li><a href="#" class="after">after</a></li>
                 </ul>
               </div>
@@ -704,7 +703,7 @@
         </div>
       </div>
       <!-- end results data -->
-      <footer>
+      <footer class="clearfix">
         <div class="advanced-search__pagination">
           <div class="pagination-wrap">
             <ul class="pagination">

@@ -16,6 +16,31 @@
 //  function to remove all tags
 //  
 
+// add span to dropdown list
+function addSpan(txt, elem) {
+  $(txt).prependTo(elem);
+}
+
+
+// function to change span text when dropdown
+// li is clicked
+$(".dropdown").on ('click', 'li', function(e) {
+  e.preventDefault();
+  var parentSpan = $(e.delegateTarget).find('span');
+  var selectText = $(this).text();
+
+  parentSpan.text(selectText);
+
+  //console.log($(this).attr('id')); // jQuery's .attr() method, same but more verbose
+  //console.log($(this).html()); // gets innerHTML of clicked li
+  //console.log($(parentSpan).text()); // gets text contents of clicked li
+  //console.log(parentSpan.text(selectText)); // get span text from parent
+  //addSpan(parentSpan.text(), this);
+});
+
+//$(this).addClass('active').siblings().removeClass('active');
+
+
 
 // function to add/remove class 
 // on grandparent element if 

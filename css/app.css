@@ -562,7 +562,6 @@ body {
 .wrapper {
   clear: both;
   height: auto;
-  overflow: hidden;
   position: relative; }
 
 /* start main content styles */
@@ -572,8 +571,7 @@ body {
   width: 82%; }
 
 footer {
-  margin: 0 3% 1% 1%;
-  overflow: hidden; }
+  margin: 0 3% 1% 1%; }
 
 /* end main content styles */
 /* reusable classes */
