@@ -15,10 +15,6 @@
     }
   }
 
-  .advanced-search__bottom {
-    padding: 1em;
-  }
-
   .select-row-wrap {
     display: inline-block;
   }
@@ -26,6 +22,8 @@
 
 // search checkboxes area styles
 .advanced-search__checkboxes {
+  border-bottom: 1px solid $gray-border;
+  border-top: 1px solid $gray-border;
   font-size: 0.95em;
   overflow: hidden;
 
@@ -64,7 +62,7 @@
   }
 
   .dd-checkboxes {
-    max-height: 18em;
+    max-height: 14em;
     overflow: scroll;
   }
 
@@ -85,8 +83,8 @@
 }
 
 .advanced-search__select-area, 
-.advanced-search__checkboxes {
-  border-bottom: 1px solid $gray-border;
+.advanced-search__checkboxes,
+.advanced-search__btn-row {
   padding: 1em;
 } 
 

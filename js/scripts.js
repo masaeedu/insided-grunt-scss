@@ -16,12 +16,6 @@
 //  function to remove all tags
 //  
 
-// function to create tag and add data into ta
-function createTagAddItem(tag, item) {
-  var ele = document.createElement(tag);
-  ele.innerHTML = item;
-  return ele;
-}
 
 
 // add span to dropdown list
@@ -39,18 +33,22 @@ function createDropdownLi(liText) {
   return li;
 }
 
+// find a way to connect these two
+
 // create dropdown ul
-function addDropDown(el) {
+function addDropDown(el, items) {
 
   var div = $('<div/>')
-      .addClass('dropdown', 'gradient-gray-bg');
+      .addClass('dropdown gradient-gray-bg');
   var span = $('<span>Choose:</span>');
   var list = $('<ul/>')
       .addClass('dropdown__menu');
   //var testLi = $('<li><a href="#">before</a></li>');
-  var testLi = createDropdownLi('before');
+  $.each(items, function(i){
+    createDropdownLi(this).appendTo(list);
+  });
 
-  testLi.appendTo(list);
+  //testLi.appendTo(list);
   list.appendTo(div);
   span.appendTo(div);
 
@@ -58,10 +56,161 @@ function addDropDown(el) {
   //console.log(el);
 }
 
+// create check all links
+// for dropdown checkboxes
+function ddCheckAll() {
+  var divCheck = $('<div/>')
+      .addClass('dd-check-links');
+  var checkLink = $('<a/>')
+      .attr('id', 'dd-check-all')
+      .text('Check all').appendTo(divCheck);
+  var uncheckLink = $('<a/>')
+      .attr('id', 'dd-uncheck-all')
+      .text('Uncheck all').appendTo(divCheck);
+  return divCheck;
+}
+
+// create actual checkbox
+function ddCheckbox(group, check) {
+  var divCheckbox = $('<div/>')
+      .addClass('group__checkbox');
+  var chkbox = $('<input type="checkbox">')
+      .attr('id', 'group'+group+'__checkbox-'+check)
+      .appendTo(divCheckbox);
+  var label = $('<label/>')
+      .attr('for', 'group'+group+'__checkbox-'+check)
+      .text('Option #'+check+'for group'+group)
+      .appendTo(divCheckbox);
+  return divCheckbox;
+}
+
+// create checkboxes group
+function ddCheckGroup(num) {
+  var divGroup = $('<div/>')
+      .addClass('dd-checkboxes__group');
+  var pTag = $('<p/>')
+      .text('Group '+ num)
+      .appendTo(divGroup);
+
+  // loop through 3 groups
+  for (var i=1; i<4; i++) {
+    ddCheckbox(num, [i]).appendTo(divGroup);
+  }
+
+  return divGroup;
+}
+
+// create dropdown checkboxes
+// for usergroup
+function addDdCheckboxes(el) {
+  var div = $('<div/>')
+      .addClass('dropdown dropdown--user-options gradient-gray-bg');
+  var wrap = $('<div/>')
+      .addClass('dd-checkboxes');
+  var span = $('<span>Choose:</span>'); // refactor later
+  var list = $('<ul/>')
+      .addClass('dropdown__menu');
+  var li = $('<li/>');
+
+  ddCheckAll().appendTo(wrap);
+  // loop through 3 groups
+  for (var i=1; i<4; i++) {
+    ddCheckGroup([i]).appendTo(wrap);
+  }
+  wrap.appendTo(li);
+  li.appendTo(list);
+  list.appendTo(div);
+  span.appendTo(div);
+
+  div.appendTo(el);
+}
+
+// dropdown for calendar
+function calendarDropdown(el) {
+  var div = $('<div/>')
+      .addClass('dropdown gradient-gray-bg');
+  var span = $('<span>Choose date:</span>'); // refactor later
+  var list = $('<ul/>')
+      .addClass('dropdown__menu');
+  var li = $('<li/>');
+  var datepicker = $('<div/>')
+      .addClass('datepicker-here')
+      .attr('data-language', 'en');
+
+  datepicker.appendTo(li);
+  li.appendTo(list);
+  span.appendTo(div);
+  list.appendTo(div);
+
+  div.appendTo(el);
+  $('.datepicker-here').datepicker();
+}
+
+// create remove btn
+function addRemoveBtn(dd) {
+  var btn = $('<div/>')
+      .addClass('remove btn')
+      .text('x')
+      .appendTo(dd);
+}
+
+// function to delete row
+function removeRow(r) {
+  r.on('click','.remove' , function() {
+    $(this).parent().remove();
+  });
+}
+
+// function to add row
+function createRow(num) {
+  var row = $('<div/>')
+      .addClass('advanced-search__select-row clearfix');
+  var rowWrap = $('<div/>')
+      .addClass('select-row-wrap');
+  var span = $('<span>Choose:</span>'); // refactor later
+  var list = $('<ul/>')
+      .addClass('dropdown__menu');
+  var reg = createDropdownLi('reg-date'+num);
+  var user = createDropdownLi('reg-date'+num);
+
+  reg.appendTo(list);
+  user.appendTo(list);
+  span.appendTo(rowWrap);
+  list.appendTo(rowWrap);
+  rowWrap.appendTo(row);
+  return row;
+}
+
+function addRow() {
+  var i = 1;
+  $('.advanced-search.btn--green').on('click','button' , function() {
+    createRow(i).appendTo('.advanced-search__select-area');
+    i++;
+    return false;
+  });
+}
+
 // function to decide which 
 // dropdown to create
-function whichDropdown() {
-  
+function whichDropdown(ddId, elem) {
+  var chosenDropdown;
+  switch (ddId) {
+    case 'reg-date':
+      var whenDateArr = ['before', 'after', 'on'];
+      addDropDown(elem, whenDateArr);
+      break;
+    case 'usergroup':
+      addDdCheckboxes(elem);
+      addRemoveBtn(elem);
+      break;
+    case 'menu--before':
+    case 'menu--after':
+    case 'menu--on':
+      calendarDropdown(elem);
+      addRemoveBtn(elem);
+      removeRow(elem);
+      break;
+  }
 }
 
 
@@ -177,7 +326,8 @@ DropDown.prototype = {
       span.text(liText);
 
       console.log(linkId);
-      addDropDown(row);
+      //addDropDown(row, linkId);
+      whichDropdown(linkId, row);
     });
   },
   // addDropDown: function() {
