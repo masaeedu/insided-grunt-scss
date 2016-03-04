@@ -24,10 +24,11 @@ function addSpan(txt, elem) {
 }
 
 // create inner dropdown menu
-function createDropdownLi(liText) {
+function createDropdownLi(liId, liText) {
+  liText = liText || liId;
   var li = $('<li/>');
   var liLink = $('<a/>')
-      .attr('id', 'menu--'+liText)
+      .attr('id', 'menu--'+liId)
       .text(liText);
   liLink.appendTo(li);
   return li;
@@ -157,7 +158,7 @@ function addRemoveBtn(dd) {
 // function to delete row
 function removeRow(r) {
   r.on('click','.remove' , function() {
-    $(this).parent().remove();
+    $(this).parents(':eq(1)').remove();
   });
 }
 
@@ -165,43 +166,58 @@ function removeRow(r) {
 function createRow(num) {
   var row = $('<div/>')
       .addClass('advanced-search__select-row clearfix');
+  var dd = $('<div/>')
+      .addClass('dropdown gradient-gray-bg');
   var rowWrap = $('<div/>')
       .addClass('select-row-wrap');
   var span = $('<span>Choose:</span>'); // refactor later
   var list = $('<ul/>')
       .addClass('dropdown__menu');
-  var reg = createDropdownLi('reg-date'+num);
-  var user = createDropdownLi('reg-date'+num);
+  var reg = createDropdownLi('reg-date', 'Registration date');
+  var user = createDropdownLi('usergroup', 'Usergroup');
 
   reg.appendTo(list);
   user.appendTo(list);
-  span.appendTo(rowWrap);
-  list.appendTo(rowWrap);
+  span.appendTo(dd);
+  list.appendTo(dd);
+  dd.appendTo(rowWrap);
   rowWrap.appendTo(row);
   return row;
 }
 
+// add row when button clicked
 function addRow() {
   var i = 1;
-  $('.advanced-search.btn--green').on('click','button' , function() {
+  $('.advanced-search').on('click','button.btn--green' , function() {
     createRow(i).appendTo('.advanced-search__select-area');
     i++;
-    return false;
+    //return false;
   });
+}
+
+// remove sibling dropdowns 
+function removeSiblings(rs) {
+    rs.siblings().remove();
 }
 
 // function to decide which 
 // dropdown to create
-function whichDropdown(ddId, elem) {
+function whichDropdown(ddId, elem, rm) {
   var chosenDropdown;
   switch (ddId) {
     case 'reg-date':
+    case 'menu--reg-date':
       var whenDateArr = ['before', 'after', 'on'];
+      removeSiblings(rm);
       addDropDown(elem, whenDateArr);
+      console.log(rm);
       break;
     case 'usergroup':
+    case 'menu--usergroup':
+      removeSiblings(rm);
       addDdCheckboxes(elem);
       addRemoveBtn(elem);
+      removeRow(elem);
       break;
     case 'menu--before':
     case 'menu--after':
@@ -212,34 +228,6 @@ function whichDropdown(ddId, elem) {
       break;
   }
 }
-
-
-
-
-// function to change span text when dropdown
-// li is clicked
-// $(".select-row-wrap").on ('click', 'li', function(e) {
-//   e.preventDefault();
-//   var li = $(this);
-//   var row = $(e.delegateTarget);
-//   var span = row.find('span');
-//   var liText = li.text();
-
-//   span.text(liText);
-
-//   console.log(row.html());
-//   console.log(li);
-//   addDropDown(row);
-
-  //console.log($(this).attr('id')); // jQuery's .attr() method, same but more verbose
-  //console.log($(this).html()); // gets innerHTML of clicked li
-  //console.log($(parentSpan).text()); // gets text contents of clicked li
-  //console.log(parentSpan.text(selectText)); // get span text from parent
-  //addSpan(parentSpan.text(), this);
-// });
-
-//$(this).addClass('active').siblings().removeClass('active');
-
 
 
 // function to add/remove class 
@@ -292,7 +280,8 @@ $(".search-results-td input:checkbox").on('change',function () {
 // http://tympanus.net/Tutorials/CustomDropDownListStyling/index3.html
 // function for using ul as dropdowns
 $(function() {
-  var dd = new DropDown($('.advanced-search__select-row'));
+  var dd = new DropDown($('.content'));
+  addRow();
 });
 
 function DropDown(el) {
@@ -314,7 +303,7 @@ DropDown.prototype = {
     // li is clicked
     var obj = this;
 
-    obj.dd.on ('click', 'li', function(e) {
+    obj.dd.on ('click', '.dropdown li', function(e) {
       e.preventDefault();
       var li = $(this);
       var div = li.parents(':eq(1)');
@@ -327,7 +316,7 @@ DropDown.prototype = {
 
       console.log(linkId);
       //addDropDown(row, linkId);
-      whichDropdown(linkId, row);
+      whichDropdown(linkId, row, div);
     });
   },
   // addDropDown: function() {
