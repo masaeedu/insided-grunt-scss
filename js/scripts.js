@@ -16,27 +16,64 @@
 //  function to remove all tags
 //  
 
+// function to create tag and add data into ta
+function createTagAddItem(tag, item) {
+  var ele = document.createElement(tag);
+  ele.innerHTML = item;
+  return ele;
+}
+
+
 // add span to dropdown list
 function addSpan(txt, elem) {
   $(txt).prependTo(elem);
 }
 
+// <div class="dropdown dropdown--date-options gradient-gray-bg">
+//   <span>Choose:</span> 
+//   <ul class="dropdown__menu">
+//     <li><a href="#" class="after">before</a></li>
+//     <li><a href="#" class="after">after</a></li>
+//   </ul>
+// </div>
+
+// create dropdown ul
+function addDropDown(el) {
+
+  var div = $('<div class="dropdown gradient-gray-bg"></div>');
+  var span = $('<span>Choose:</span>');
+  var list = $('<ul class="dropdown__menu"></ul>');
+  var testLi = $('<li><a href="#">before</a></li>');
+
+  testLi.appendTo(list);
+  list.appendTo(div);
+  span.appendTo(div);
+
+  div.appendTo(el);
+  console.log(el);
+}
 
 // function to change span text when dropdown
 // li is clicked
-$(".dropdown").on ('click', 'li', function(e) {
-  e.preventDefault();
-  var parentSpan = $(e.delegateTarget).find('span');
-  var selectText = $(this).text();
+// $(".select-row-wrap").on ('click', 'li', function(e) {
+//   e.preventDefault();
+//   var li = $(this);
+//   var row = $(e.delegateTarget);
+//   var span = row.find('span');
+//   var liText = li.text();
 
-  parentSpan.text(selectText);
+//   span.text(liText);
+
+//   console.log(row.html());
+//   console.log(li);
+//   addDropDown(row);
 
   //console.log($(this).attr('id')); // jQuery's .attr() method, same but more verbose
   //console.log($(this).html()); // gets innerHTML of clicked li
   //console.log($(parentSpan).text()); // gets text contents of clicked li
   //console.log(parentSpan.text(selectText)); // get span text from parent
   //addSpan(parentSpan.text(), this);
-});
+// });
 
 //$(this).addClass('active').siblings().removeClass('active');
 
@@ -92,20 +129,100 @@ $(".search-results-td input:checkbox").on('change',function () {
 // http://tympanus.net/Tutorials/CustomDropDownListStyling/index3.html
 // function for using ul as dropdowns
 $(function() {
-  var dd = new DropDown($('.dropdown'));
+  var dd = new DropDown($('.advanced-search__select-row'));
 });
 
 function DropDown(el) {
   this.dd = el;
   this.initEvents();
+  this.liClick();
 }
 DropDown.prototype = {
   initEvents : function() {
     var obj = this;
 
-    obj.dd.on('click', function(event){
+    obj.dd.on('click', '.dropdown', function(event){
       $(this).toggleClass('active');
       event.stopPropagation();
     }); 
-  }
+  },
+  liClick: function() {
+    // function to change span text when dropdown
+    // li is clicked
+    var obj = this;
+
+    obj.dd.on ('click', 'li', function(e) {
+      e.preventDefault();
+      var li = $(this);
+      var div = li.parents(':eq(1)');
+      var row = $(e.delegateTarget);
+      var span = div.find('span');
+      var liText = li.text();
+
+      span.text(liText);
+
+      //console.log(span);
+
+      //console.log(row.html());
+      addDropDown(row);
+    });
+  },
+  // addDropDown: function() {
+  //   var obj = this;
+
+  //   var div = $('<div class="dropdown gradient-gray-bg"></div>');
+  //   var span = $('<span>Choose:</span>');
+  //   var list = $('<ul class="dropdown__menu"></ul>');
+  //   var testLi = $('<li><a href="#">before</a></li>');
+
+  //   testLi.appendTo(list);
+  //   list.appendTo(div);
+  //   span.appendTo(div);
+
+  //   div.appendTo(obj.dd.parent());
+  //   console.log(obj.dd.parent());
+  // }
 };
+
+
+// function DropDown(el) {
+//   this.dd = el;
+//   this.initEvents();
+//   this.liClick();
+// }
+
+// DropDown.prototype = {
+//   initEvents : function() {
+//     var obj = this;
+
+//     obj.dd.on('click', function(event){
+//       $(this).toggleClass('active');
+//       event.stopPropagation();
+//     }); 
+//   },
+//   liClick: function() {
+//     // function to change span text when dropdown
+//     // li is clicked
+//     var obj = this;
+
+//     obj.dd.on ('click', 'li', function(e) {
+//       e.preventDefault();
+//       var li = $(this);
+//       var menu = $(e.delegateTarget);
+//       var row = menu.parents(':eq(1)');
+//       var span = menu.find('span');
+//       var liText = li.text();
+
+//       span.text(liText);
+
+//       console.log(row.html());
+//       addDropDown(row);
+
+      //console.log($(this).attr('id')); // jQuery's .attr() method, same but more verbose
+      //console.log($(this).html()); // gets innerHTML of clicked li
+      //console.log($(parentSpan).text()); // gets text contents of clicked li
+      //console.log(parentSpan.text(selectText)); // get span text from parent
+      //addSpan(parentSpan.text(), this);
+//     });
+//   }
+// };
