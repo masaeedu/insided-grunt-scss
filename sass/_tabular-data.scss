@@ -20,6 +20,12 @@
       background: none;
     }
   }
+
+  .search-results__row {
+    &.checked-row {
+      background: $light-blue-bg;
+    }
+  }
 }
 
 .search-results__row {
@@ -32,10 +38,6 @@
 
   .search-results__last-comment {
     border-right: none;
-  }
-
-  &.checked-row {
-    background: $light-blue-bg;
   }
 
   &:nth-child(odd) {

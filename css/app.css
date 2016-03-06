@@ -463,6 +463,8 @@ nav.top-bar__user-nav,
     text-align: center; }
     .search-results .search-results-th .search-results__checkbox {
       background: none; }
+  .search-results .search-results__row.checked-row {
+    background: #ebf8fe; }
 
 .search-results__row .search-results-td {
   border-bottom: 1px solid #c5c5c5;
@@ -471,8 +473,6 @@ nav.top-bar__user-nav,
   text-align: center; }
 .search-results__row .search-results__last-comment {
   border-right: none; }
-.search-results__row.checked-row {
-  background: #ebf8fe; }
 .search-results__row:nth-child(odd) {
   background: #fafafa; }
 .search-results__row .search-results__username {
