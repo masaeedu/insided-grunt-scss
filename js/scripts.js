@@ -111,7 +111,8 @@ function addDdCheckboxes(el) {
   var span = $('<span>Choose:</span>'); // refactor later
   var list = $('<ul/>')
       .addClass('dropdown__menu');
-  var li = $('<li/>');
+  var li = $('<li/>')
+      .addClass('li-checkboxes');
 
   ddCheckAll().appendTo(wrap);
   // loop through 3 groups
@@ -257,13 +258,21 @@ function unlessNoneChecked(ele, removeEl) {
   }
 }
 
-$('a#dd-check-all').on('click', function(e) {
-  e.preventDefault();
-  $(".dd-checkboxes__group input:checkbox").prop('checked', $(this).prop("checked"));
+$('.content').on('click','#dd-check-all', function(e) {
+  //e.preventDefault();
+  console.log('check');
+  $(".dd-checkboxes__group input:checkbox").prop('checked', true);
+});
+
+$('.content').on('click','#dd-uncheck-all', function(e) {
+  //e.preventDefault();
+  console.log('uncheck');
+  $(".dd-checkboxes__group input:checkbox").prop('checked', false);
 });
 
 
 // checkmark all user results
+// add highlight class
 $("#search-results__checkbox-all").on('change',function () {
   $(".search-results-td input:checkbox").prop('checked', $(this).prop("checked"));
   unlessNoneChecked('.search-results-td input:checkbox:checked', '.search-results__footer');
@@ -271,6 +280,7 @@ $("#search-results__checkbox-all").on('change',function () {
 });
 
 // check for checkbox changes
+// add highlight class
 $(".search-results-td input:checkbox").on('change',function () {
   ifChecked(this, '.search-results__row', 'checked-row');
   unlessNoneChecked('.search-results-td input:checkbox:checked', '.search-results__footer');
@@ -304,7 +314,6 @@ DropDown.prototype = {
     var obj = this;
 
     obj.dd.on ('click', '.dropdown li', function(e) {
-      e.preventDefault();
       var li = $(this);
       var div = li.parents(':eq(1)');
       var row = li.parents(':eq(3)').find('.select-row-wrap');
@@ -312,28 +321,22 @@ DropDown.prototype = {
       var liText = li.text();
       var linkId = li.find('a').attr('id');
 
-      span.text(liText);
+      if (li.is('.li-checkboxes')) {
+        console.log(li.children().is('.dd-checkboxes'));
+        //li.unbind(e);
+        e.stopPropagation();
+      } else {
+        e.preventDefault();
+        span.text(liText);
+        //addDropDown(row, linkId);
+        whichDropdown(linkId, row, div);
+      }
 
       console.log(linkId);
-      //addDropDown(row, linkId);
-      whichDropdown(linkId, row, div);
+      console.log(li.is('.li-checkboxes'));
+      
     });
-  },
-  // addDropDown: function() {
-  //   var obj = this;
-
-  //   var div = $('<div class="dropdown gradient-gray-bg"></div>');
-  //   var span = $('<span>Choose:</span>');
-  //   var list = $('<ul class="dropdown__menu"></ul>');
-  //   var testLi = $('<li><a href="#">before</a></li>');
-
-  //   testLi.appendTo(list);
-  //   list.appendTo(div);
-  //   span.appendTo(div);
-
-  //   div.appendTo(obj.dd.parent());
-  //   console.log(obj.dd.parent());
-  // }
+  }
 };
 
 
