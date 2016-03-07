@@ -4,634 +4,544 @@
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Insided Front End Assignment</title>
-  <meta name="author" content="Roz" />
-  <meta name="description" content="R.Bonilla's version of the Front end assignment" />
-  <meta name="google-site-verification" content="" />
-  <meta name="Copyright" content="Insided" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insided Front End Assignment</title>
+    <meta name="author" content="Roz" />
+    <meta name="description" content="R.Bonilla's version of the Front end assignment" />
+    <meta name="google-site-verification" content="" />
+    <meta name="Copyright" content="Insided" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- concatenate and minify for production -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/datepicker/datepicker.min.css" />
-  <link rel="stylesheet" href="css/app.min.css" />
+    <!-- concatenate and minify for production -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/datepicker/datepicker.min.css" />
+    <link rel="stylesheet" href="css/app.min.css" />
 </head>
 
 <body>
-  <!-- Top black bar content -->
-  <header class="top-bar">
-    <div class="top-bar__logo">
-      <img src="img/logo.png" alt="Insided Logo" />
-      <p>in opdrancht voor <span class="text-bold">Fubar</span></p>
-    </div>
-    <nav class="top-bar__user-nav">
-      <div class="top-bar__user-name">
-        Johnny Napalm
-      </div>
-      <div class="top-bar__user-btn">
-        5 <i class="fa fa-envelope-o"></i>
-      </div>
-    </nav>
-  </header>
+    <!-- Top black bar content -->
+    <header class="top-bar">
+        <div class="top-bar__logo">
+            <img src="img/logo.png" alt="Insided Logo" />
+            <p>in opdrancht voor <span class="text-bold">Fubar</span></p>
+        </div>
+        <nav class="top-bar__user-nav">
+            <div class="top-bar__user-name">
+                Johnny Napalm
+            </div>
+            <div class="top-bar__user-btn">
+                5 <i class="fa fa-envelope-o"></i>
+            </div>
+        </nav>
+    </header>
 
-  <div class="wrapper">
-    <!-- Left Sidebar links -->
-    <div class="left-wrapper">
-      <div class="sidebar">
-        <ul>
-          <li><a href="#"><i class="fa fa-bar-chart-o"></i>Analytics</a></li>
-          <li><a href="#"><i class="fa fa-wrench"></i>Moderation</a></li>
-          <li>
-            <!-- add a toggle feature if you have time -->
-            <a href="#"><i class="fa fa-user"></i>Users</a>
-            <ul class="sidebar__inner-ul">
-              <li><a href="#" class="active">Overview</a></li>
-              <li><a href="#">Custom filter</a></li>
-              <li><a href="#">Create new user</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
-          <li><a href="#"><i class="fa fa-pencil"></i>Blog</a></li>
-          <li><a href="#"><i class="fa fa-flask"></i>Onderzoek</a></li>
-          <li><a href="#" class="disabled"><i class="fa fa-chevron-circle-left"></i>Inklappen</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Main content section -->
-    <div class="content">
-      <!-- start advanced search area -->
-      <div class="advanced-search">
-        <div class="advanced-search__select-area">
-          <h4>Advanced search</h4>
-          <div class="advanced-search__select-row row-reg-date clearfix">
-            <div class="select-row-wrap">
-              <div class="dropdown dropdown--reg-date gradient-gray-bg">
-                <span>Choose:</span> 
-                <ul class="dropdown__menu">
-                  <li><a href="#" id="reg-date">Registration date</a></li>
-                  <li><a href="#" id="usergroup">Usergroup</a></li>
+    <div class="wrapper">
+        <!-- Left Sidebar links -->
+        <div class="left-wrapper">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#"><i class="fa fa-bar-chart-o"></i>Analytics</a></li>
+                    <li><a href="#"><i class="fa fa-wrench"></i>Moderation</a></li>
+                    <li>
+                        <!-- add a toggle feature if you have time -->
+                        <a href="#"><i class="fa fa-user"></i>Users</a>
+                        <ul class="sidebar__inner-ul">
+                            <li><a href="#" class="active">Overview</a></li>
+                            <li><a href="#">Custom filter</a></li>
+                            <li><a href="#">Create new user</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>Blog</a></li>
+                    <li><a href="#"><i class="fa fa-flask"></i>Onderzoek</a></li>
+                    <li><a href="#" class="disabled"><i class="fa fa-chevron-circle-left"></i>Inklappen</a></li>
                 </ul>
-              </div>
             </div>
-          </div>
         </div>
 
-        <div class="advanced-search__btn-row">
-          <button class="btn btn--green">Add row</button>
-        </div>
+        <!-- Main content section -->
+        <div class="content">
+            <!-- start advanced search area -->
+            <div class="advanced-search">
+                <div class="advanced-search__select-area">
+                    <h4>Advanced search</h4>
+                    <div class="advanced-search__select-row row-reg-date clearfix">
+                        <div class="select-row-wrap">
+                            <div class="dropdown dropdown--reg-date gradient-gray-bg">
+                                <span>Choose:</span>
+                                <ul class="dropdown__menu">
+                                    <li><a href="#" id="reg-date">Registration date</a></li>
+                                    <li><a href="#" id="usergroup">Usergroup</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="advanced-search__checkboxes">
-          <h4>Columns</h4>
-          <div class="group-checkboxes">
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-1">
-              <label for="advanced-search__checkbox-1">Usertitle</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-2">
-              <label for="advanced-search__checkbox-2">Comments</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-3">
-              <label for="advanced-search__checkbox-3">Deleted Comments</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-4">
-              <label for="advanced-search__checkbox-4">Deleted topics</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-5">
-              <label for="advanced-search__checkbox-5">Questions solved</label>
-            </div>
-          </div>
-          <div class="group-checkboxes">
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-6">
-              <label for="advanced-search__checkbox-6">Topics</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-7">
-              <label for="advanced-search__checkbox-7">Usergroups</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-8">
-              <label for="advanced-search__checkbox-8">Secondary</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-9">
-              <label for="advanced-search__checkbox-9">Registration</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-10">
-              <label for="advanced-search__checkbox-10">Last login</label>
-            </div>
-          </div>
-          <div class="group-checkboxes">
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-11">
-              <label for="advanced-search__checkbox-11">Usertitle</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-12">
-              <label for="advanced-search__checkbox-12">Usertitle</label>
-            </div>
-          </div>
-          <div class="group-checkboxes">
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-13">
-              <label for="advanced-search__checkbox-13">Usertitle</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-14">
-              <label for="advanced-search__checkbox-14">Usertitle</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-15">
-              <label for="advanced-search__checkbox-15">Location</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-16">
-              <label for="advanced-search__checkbox-16">Interest</label>
-            </div>
-          </div>
-          <div class="group-checkboxes">
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-17">
-              <label for="advanced-search__checkbox-17">Profession</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-18">
-              <label for="advanced-search__checkbox-18">Signature</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-19">
-              <label for="advanced-search__checkbox-19">Notes</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-20">
-              <label for="advanced-search__checkbox-20">Badges</label>
-            </div>
-          </div>
-          <div class="group-checkboxes">
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-21">
-              <label for="advanced-search__checkbox-21">Reputation received</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-22">
-              <label for="advanced-search__checkbox-22">Reputation given</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-23">
-              <label for="advanced-search__checkbox-23">Followers</label>
-            </div>
-            <div class="advanced-search__checkbox">
-              <input type="checkbox" id="advanced-search__checkbox-24">
-              <label for="advanced-search__checkbox-24">Following</label>
-            </div>
-          </div>
-        </div>
+                <div class="advanced-search__btn-row">
+                    <button class="btn btn--green">Add row</button>
+                </div>
 
-        <div class="advanced-search__btn-row">
-          <button class="btn--blue btn">Update</button>
-          <a href="#" class="red-link">Cancel</a>
-        </div>
-      </div>
-      <!-- end advanced search area -->
+                <div id="advanced-search__checkboxes">
+                    <!-- Checkboxes no longer need to be hard coded -->
+                </div>
 
-      <!-- start category & top pagination -->
-      <div class="advanced-search__middle clearfix">
-        <div class="advanced-search__categories">
-          <div class="categories-wrap">
-            <ul>
-              <li><button class="btn btn--gradient gradient-gray-bg"><i class="fa fa-times"></i>Category</button></li>
-              <li><button class="btn btn--gradient gradient-gray-bg"><i class="fa fa-times"></i>Tags</button></li>
-              <li><button class="btn btn--gradient gradient-gray-bg"><i class="fa fa-times"></i>Views</button></li>
-            </ul>
-            <a href="#" class="red-link">Clear selection</a>
-          </div>
+                <div class="advanced-search__btn-row">
+                    <button class="btn--blue btn">Update</button>
+                    <a href="#" class="red-link">Cancel</a>
+                </div>
+            </div>
+            <!-- end advanced search area -->
+
+            <!-- start category & top pagination -->
+            <div class="advanced-search__middle clearfix">
+                <div class="advanced-search__categories">
+                    <div class="categories-wrap">
+                        <ul>
+                            <li>
+                                <button class="btn btn--gradient gradient-gray-bg"><i class="fa fa-times"></i>Category</button>
+                            </li>
+                            <li>
+                                <button class="btn btn--gradient gradient-gray-bg"><i class="fa fa-times"></i>Tags</button>
+                            </li>
+                            <li>
+                                <button class="btn btn--gradient gradient-gray-bg"><i class="fa fa-times"></i>Views</button>
+                            </li>
+                        </ul>
+                        <a href="#" class="red-link">Clear selection</a>
+                    </div>
+                </div>
+                <div class="advanced-search__pagination clearfix">
+                    <div class="pagination-wrap">
+                        <ul class="pagination">
+                            <li><a href="#" class="disabled">First</a></li>
+                            <li>
+                                <a href="#" class="disabled">
+                                    <<</a>
+                            </li>
+                            <li>Page
+                                <input type="text" value="1" class="" /> of 12</li>
+                            <li><a href="#" class="blue-link">>></a></li>
+                            <li><a href="#" class="blue-link">Last</a></li>
+                        </ul>
+                        <div class="dropdown dropdown--select-rows gradient-gray-bg">
+                            <span>10 Rows</span>
+                            <ul class="dropdown__menu">
+                                <li><a href="#">25 Rows</a></li>
+                                <li><a href="#">50 Rows</a></li>
+                                <li><a href="#">Moderator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end start category & top pagination -->
+
+            <!-- start results data -->
+            <div class="advanced-search__results">
+                <div class="search-results">
+                    <div class="search-results-thead gradient-gray-bg">
+                        <div class="search-results-tr">
+                            <div class="search-results-th" data-label="Username">
+                                <div class="search-results__checkbox left-text-align">
+                                    <input type="checkbox" id="search-results__checkbox-all">
+                                    <label for="search-results__checkbox-all">Username &#x25BC;</label>
+                                </div>
+                            </div>
+                            <div class="search-results-th" data-label="Comments">Comments</div>
+                            <div class="search-results-th" data-label="Topics">Topics</div>
+                            <div class="search-results-th" data-label="Usergroup">Usergroup</div>
+                            <div class="search-results-th" data-label="Registration date">Registration date</div>
+                            <div class="search-results-th" data-label="Last login">Last login</div>
+                            <div class="search-results-th" data-label="Last comment">Last comment</div>
+                        </div>
+                    </div>
+                    <div class="search-results-tbody">
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-1">
+                                    <label for="search-results__checkbox-1">
+                                        <a href="#"><img src="img/amber-h.png" /></a>
+                                        <a href="#">Amber H.</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                64
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                9
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Registered user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                19-mar-12 12:00
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                16-aug-12 12:11
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                16-aug-12 16:10
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-2">
+                                    <label for="search-results__checkbox-2">
+                                        <a href="#"><img src="img/bart-p.png" /></a>
+                                        <a href="#">Bart Pineapple</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                37
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                -
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Registered user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                20-mar-11 13:57
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                15-may-12 17:34
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                14-may-12 20:01
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-3">
+                                    <label for="search-results__checkbox-3">
+                                        <a href="#"><img src="img/caitlyn-a.png" /></a>
+                                        <a href="#">Caitlyn Appleseed</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                189
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                13
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Registered user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                13-aug-12 22:09
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                13-aug-12 22:10
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                13-aug-12 23:50
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-4">
+                                    <label for="search-results__checkbox-4">
+                                        <a href="#"><img src="img/amber-h.png" /></a>
+                                        <a href="#">Carmen Candy</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                411
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                22
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Moderator
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                01-jan-11 11:21
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                15-aug-12 17:17
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                15-aug-12 18:13
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-5">
+                                    <label for="search-results__checkbox-5">
+                                        <a href="#"><img src="img/dolf-d.png" /></a>
+                                        <a href="#">Dolf Dreamer</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                282
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                -
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Super-user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                18-jan-11 12:08
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                16-aug-12 13:12
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                16-aug-12 14:22
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-6">
+                                    <label for="search-results__checkbox-6">
+                                        <a href="#"><img src="img/edgar-e.png" /></a>
+                                        <a href="#">Edgar Enders</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                37
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                -
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Registered user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                12-dec-11 08:55
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                05-apr-12 08:08
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                04-aug-12 23:59
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-7">
+                                    <label for="search-results__checkbox-7">
+                                        <a href="#"><img src="img/jane-b.png" /></a>
+                                        <a href="#">Jane Blackswan</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                189
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                13
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Registered user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                04-feb-12 14:34
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                16-aug-12 12:11
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                14-aug-12 07:33
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-8">
+                                    <label for="search-results__checkbox-8">
+                                        <a href="#"><img src="img/jen-a.png" /></a>
+                                        <a href="#">Jennifer Appleseed</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                75
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                2
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Moderator
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                16-mar-12 18:12
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                15-may-12 17:34
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                16-aug-12 16:10
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-9">
+                                    <label for="search-results__checkbox-9">
+                                        <a href="#"><img src="img/john-d.png" /></a>
+                                        <a href="#">John Doe</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                111
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                -
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Registered user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                30-jan-12 21:00
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                13-aug-12 22:10
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                13-aug-12 23:50
+                            </div>
+                        </div>
+                        <div class="search-results-tr search-results__row">
+                            <div class="search-results-td search-results__username" data-label="Username">
+                                <div class="search-results__checkbox search-results__checkbox--user">
+                                    <input type="checkbox" id="search-results__checkbox-10">
+                                    <label for="search-results__checkbox-10">
+                                        <a href="#"><img src="img/john-f.png" /></a>
+                                        <a href="#">John Foe</a>
+                                    </label>
+                                    <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
+                                </div>
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
+                                189
+                            </div>
+                            <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
+                                3
+                            </div>
+                            <div class="search-results-td search-results__usergroup" data-label="Usergroup">
+                                Super user
+                            </div>
+                            <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
+                                07-may-12 04:14
+                            </div>
+                            <div class="search-results-td search-results__date search-results__login" data-label="Last login">
+                                05-apr-12 08:08
+                            </div>
+                            <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
+                                14-may-12 20:01
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Show only when a user is selected -->
+                <div class="search-results__footer clearfix">
+                    <div class="search-results__dd">
+                        <div class="dropdown dropdown--usergroup gradient-gray-bg">
+                            <span>Change usergroup</span>
+                            <ul class="dropdown__menu">
+                                <li><a href="#">Registered user</a></li>
+                                <li><a href="#">Super-user</a></li>
+                                <li><a href="#">Moderator</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown dropdown--add-user gradient-gray-bg">
+                            <span>Add secondary user</span>
+                            <ul class="dropdown__menu">
+                                <li><a href="#">Registered user</a></li>
+                                <li><a href="#">Super-user</a></li>
+                                <li><a href="#">Moderator</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown dropdown--permissions gradient-gray-bg">
+                            <span>Permissions</span>
+                            <ul class="dropdown__menu">
+                                <li><a href="#">Registered user</a></li>
+                                <li><a href="#">Super-user</a></li>
+                                <li><a href="#">Moderator</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn--gradient gradient-gray-bg">Apply</button>
+                    </div>
+                    <div class="search-results__progess">
+                        <div class="progess-bar">
+                            <i class="fa fa-spinner fa-pulse"></i> 72%
+                        </div>
+                        <div class="search-results__export">
+                            <button class="btn btn--gradient gradient-gray-bg">Export to Excel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end results data -->
+            <footer class="clearfix">
+                <div class="advanced-search__pagination">
+                    <div class="pagination-wrap">
+                        <ul class="pagination">
+                            <li><a href="#" class="disabled">First</a></li>
+                            <li>
+                                <a href="#" class="disabled">
+                                    <<</a>
+                            </li>
+                            <li>Page
+                                <input type="text" value="1" class="" /> of 12</li>
+                            <li><a href="#" class="blue-link">>></a></li>
+                            <li><a href="#" class="blue-link">Last</a></li>
+                        </ul>
+                        <div class="dropdown dropdown--select-rows gradient-gray-bg">
+                            <span>10 Rows</span>
+                            <ul class="dropdown__menu">
+                                <li><a href="#">25 Rows</a></li>
+                                <li><a href="#">50 Rows</a></li>
+                                <li><a href="#">Moderator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <div class="advanced-search__pagination clearfix">
-          <div class="pagination-wrap">
-            <ul class="pagination">
-              <li><a href="#" class="disabled">First</a></li>
-              <li><a href="#" class="disabled"><<</a></li>
-              <li>Page <input type="text" value="1" class="" /> of 12</li>
-              <li><a href="#" class="blue-link">>></a></li>
-              <li><a href="#" class="blue-link">Last</a></li>
-            </ul>
-            <div class="dropdown dropdown--select-rows gradient-gray-bg">
-              <span>10 Rows</span> 
-              <ul class="dropdown__menu">
-                <li><a href="#">25 Rows</a></li>
-                <li><a href="#">50 Rows</a></li>
-                <li><a href="#">Moderator</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end start category & top pagination -->
-      
-      <!-- start results data -->
-      <div class="advanced-search__results">
-        <div class="search-results">
-          <div class="search-results-thead gradient-gray-bg">
-            <div class="search-results-tr">
-              <div class="search-results-th" data-label="Username">
-                <div class="search-results__checkbox left-text-align">
-                  <input type="checkbox" id="search-results__checkbox-all">
-                  <label for="search-results__checkbox-all">Username &#x25BC;</label>
-                </div>
-              </div>
-              <div class="search-results-th" data-label="Comments">Comments</div>
-              <div class="search-results-th" data-label="Topics">Topics</div>
-              <div class="search-results-th" data-label="Usergroup">Usergroup</div>
-              <div class="search-results-th" data-label="Registration date">Registration date</div>
-              <div class="search-results-th" data-label="Last login">Last login</div>
-              <div class="search-results-th" data-label="Last comment">Last comment</div>
-            </div>
-          </div>
-          <div class="search-results-tbody">
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-1">
-                  <label for="search-results__checkbox-1">
-                    <a href="#"><img src="img/amber-h.png" /></a>
-                    <a href="#">Amber H.</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                64
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                9
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Registered user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                19-mar-12 12:00
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                16-aug-12 12:11
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                16-aug-12 16:10
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-2">
-                  <label for="search-results__checkbox-2">
-                    <a href="#"><img src="img/bart-p.png" /></a>
-                    <a href="#">Bart Pineapple</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                37
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                -
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Registered user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                20-mar-11 13:57
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                15-may-12 17:34
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                14-may-12 20:01
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-3">
-                  <label for="search-results__checkbox-3">
-                    <a href="#"><img src="img/caitlyn-a.png" /></a>
-                    <a href="#">Caitlyn Appleseed</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                189
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                13
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Registered user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                13-aug-12 22:09
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                13-aug-12 22:10
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                13-aug-12 23:50
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-4">
-                  <label for="search-results__checkbox-4">
-                    <a href="#"><img src="img/amber-h.png" /></a>
-                    <a href="#">Carmen Candy</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                411
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                22
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Moderator
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                01-jan-11 11:21
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                15-aug-12 17:17
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                15-aug-12 18:13
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-5">
-                  <label for="search-results__checkbox-5">
-                    <a href="#"><img src="img/dolf-d.png" /></a>
-                    <a href="#">Dolf Dreamer</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                282
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                -
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Super-user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                18-jan-11 12:08
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                16-aug-12 13:12
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                16-aug-12 14:22
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-6">
-                  <label for="search-results__checkbox-6">
-                    <a href="#"><img src="img/edgar-e.png" /></a>
-                    <a href="#">Edgar Enders</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                37
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                -
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Registered user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                12-dec-11 08:55
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                05-apr-12 08:08
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                04-aug-12 23:59
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-7">
-                  <label for="search-results__checkbox-7">
-                    <a href="#"><img src="img/jane-b.png" /></a>
-                    <a href="#">Jane Blackswan</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                189
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                13
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Registered user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                04-feb-12 14:34
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                16-aug-12 12:11
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                14-aug-12 07:33
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-8">
-                  <label for="search-results__checkbox-8">
-                    <a href="#"><img src="img/jen-a.png" /></a>
-                    <a href="#">Jennifer Appleseed</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                75
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                2
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Moderator
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                16-mar-12 18:12
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                15-may-12 17:34
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                16-aug-12 16:10
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-9">
-                  <label for="search-results__checkbox-9">
-                    <a href="#"><img src="img/john-d.png" /></a>
-                    <a href="#">John Doe</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                111
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                -
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Registered user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                30-jan-12 21:00
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                13-aug-12 22:10
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                13-aug-12 23:50
-              </div>
-            </div>
-            <div class="search-results-tr search-results__row">
-              <div class="search-results-td search-results__username" data-label="Username">
-                <div class="search-results__checkbox search-results__checkbox--user">
-                  <input type="checkbox" id="search-results__checkbox-10">
-                  <label for="search-results__checkbox-10">
-                    <a href="#"><img src="img/john-f.png" /></a>
-                    <a href="#">John Foe</a>
-                  </label>
-                  <a href="#" class="search-results__user-icon"><img src="img/user-icon.png" /></a>
-                </div>
-              </div>
-              <div class="search-results-td search-results__int-col search-results__comments" data-label="Comments">
-                189
-              </div>
-              <div class="search-results-td search-results__int-col search-results__topics" data-label="Topics">
-                3
-              </div>
-              <div class="search-results-td search-results__usergroup" data-label="Usergroup">
-                Super user
-              </div>
-              <div class="search-results-td search-results__date search-results__reg-date" data-label="Registration date">
-                07-may-12 04:14
-              </div>
-              <div class="search-results-td search-results__date search-results__login" data-label="Last login">
-                05-apr-12 08:08
-              </div>
-              <div class="search-results-td search-results__date search-results__last-comment" data-label="Last comment">
-                14-may-12 20:01
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Show only when a user is selected -->
-        <div class="search-results__footer clearfix">
-          <div class="search-results__dd">
-            <div class="dropdown dropdown--usergroup gradient-gray-bg">
-              <span>Change usergroup</span> 
-              <ul class="dropdown__menu">
-                <li><a href="#">Registered user</a></li>
-                <li><a href="#">Super-user</a></li>
-                <li><a href="#">Moderator</a></li>
-              </ul>
-            </div>
-            <div class="dropdown dropdown--add-user gradient-gray-bg">
-              <span>Add secondary user</span> 
-              <ul class="dropdown__menu">
-                <li><a href="#">Registered user</a></li>
-                <li><a href="#">Super-user</a></li>
-                <li><a href="#">Moderator</a></li>
-              </ul>
-            </div>
-            <div class="dropdown dropdown--permissions gradient-gray-bg">
-              <span>Permissions</span> 
-              <ul class="dropdown__menu">
-                <li><a href="#">Registered user</a></li>
-                <li><a href="#">Super-user</a></li>
-                <li><a href="#">Moderator</a></li>
-              </ul>
-            </div>
-            <button class="btn btn--gradient gradient-gray-bg">Apply</button> 
-          </div>
-          <div class="search-results__progess">
-            <div class="progess-bar">
-              <i class="fa fa-spinner fa-pulse"></i> 72%
-            </div>
-            <div class="search-results__export">
-              <button class="btn btn--gradient gradient-gray-bg">Export to Excel</button>  
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end results data -->
-      <footer class="clearfix">
-        <div class="advanced-search__pagination">
-          <div class="pagination-wrap">
-            <ul class="pagination">
-              <li><a href="#" class="disabled">First</a></li>
-              <li><a href="#" class="disabled"><<</a></li>
-              <li>Page <input type="text" value="1" class="" /> of 12</li>
-              <li><a href="#" class="blue-link">>></a></li>
-              <li><a href="#" class="blue-link">Last</a></li>
-            </ul>
-            <div class="dropdown dropdown--select-rows gradient-gray-bg">
-              <span>10 Rows</span> 
-              <ul class="dropdown__menu">
-                <li><a href="#">25 Rows</a></li>
-                <li><a href="#">50 Rows</a></li>
-                <li><a href="#">Moderator</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+        <!-- end main content -->
     </div>
-    <!-- end main content -->
-  </div>
-<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="js/datepicker.min.js"></script>
-<script src="js/datepicker.en.js"></script>
-<!-- this is where we put our custom functions -->
-<!-- don't forget to concatenate and minify for production -->
-<script src="js/scripts.js"></script>
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="js/datepicker.en.js"></script>
+    <script src="//wzrd.in/bundle/virtual-dom@latest"></script>
+    <!-- this is where we put our custom functions -->
+    <!-- don't forget to concatenate and minify for production -->
+    <script src="js/scripts.js"></script>
 
 </body>
+
 </html>
