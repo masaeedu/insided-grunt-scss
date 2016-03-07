@@ -145,7 +145,11 @@ function calendarDropdown(el) {
   list.appendTo(div);
 
   div.appendTo(el);
-  $('.datepicker-here').datepicker();
+  $('.datepicker-here').datepicker({
+    onSelect: function onSelect(fd) {
+    span.text(fd);
+  }
+  });
 }
 
 // create remove btn
@@ -201,6 +205,40 @@ function removeSiblings(rs) {
     rs.siblings().remove();
 }
 
+// create category button
+function createCatBtn(btnText, el) {
+  var li = $('<li/>');
+  var btn = $('<button/>')
+      .addClass('btn btn--gradient gradient-gray-bg');
+  var iconBtn = $('<i/>')
+      .addClass('fa fa-times')
+      .text(btnText);
+
+  iconBtn.appendTo(btn);
+  btn.on('click', function(){
+    console.log(el);
+    el.parent().remove();
+  });
+  btn.appendTo(li);
+
+  return li;
+}
+
+// add category button
+function addCatBtn(txt, el) {
+  createCatBtn(txt, el).appendTo($('.categories-wrap ul'));
+}
+
+// remove category button
+function removeCatBtn(el) {
+  $('.content').on('click','.categories-wrap button' , function() {
+    $(this).parent().remove();
+    //console.log($(this).parents(':eq(5)'));
+    //.closest(el)
+    //el.parents(':eq(1)').remove();
+  });
+}
+
 // function to decide which 
 // dropdown to create
 function whichDropdown(ddId, elem, rm) {
@@ -219,6 +257,8 @@ function whichDropdown(ddId, elem, rm) {
       addDdCheckboxes(elem);
       addRemoveBtn(elem);
       removeRow(elem);
+      addCatBtn('User', elem);
+      removeCatBtn(elem);
       break;
     case 'menu--before':
     case 'menu--after':
@@ -286,6 +326,9 @@ $(".search-results-td input:checkbox").on('change',function () {
   unlessNoneChecked('.search-results-td input:checkbox:checked', '.search-results__footer');
 });
 
+
+// add button to category
+
 // inspired from
 // http://tympanus.net/Tutorials/CustomDropDownListStyling/index3.html
 // function for using ul as dropdowns
@@ -308,11 +351,15 @@ DropDown.prototype = {
       event.stopPropagation();
     }); 
   },
+  logTest: function(){
+    console.log('test');
+  },
   liClick: function() {
     // function to change span text when dropdown
     // li is clicked
     var obj = this;
 
+    obj.logTest();
     obj.dd.on ('click', '.dropdown li', function(e) {
       var li = $(this);
       var div = li.parents(':eq(1)');

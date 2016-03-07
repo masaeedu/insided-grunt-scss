@@ -341,6 +341,10 @@ nav.top-bar__user-nav,
       margin-right: 0.4em; }
   .advanced-search .select-row-wrap {
     display: inline-block; }
+  .advanced-search .datepicker {
+    border: none;
+    border-radius: none;
+    width: auto; }
 
 .advanced-search__checkboxes {
   border-bottom: 1px solid #c5c5c5;
